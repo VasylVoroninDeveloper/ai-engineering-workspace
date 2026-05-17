@@ -1,0 +1,7 @@
+# Lizard Soft .NET
+ms-dotnettools.csdevkit
+ms-dotnettools.csharp
+github.copilot-chat
+github.vscode-pull-request-github
+editorconfig.editorconfig
+redhat.vscode-yaml

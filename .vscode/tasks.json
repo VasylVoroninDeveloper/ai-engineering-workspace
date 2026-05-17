@@ -1,0 +1,93 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "AI Workspace: list global prompts",
+      "type": "shell",
+      "command": "Get-ChildItem -Path 01-global-prompts -Recurse -File | Select-Object -ExpandProperty FullName",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "AI Workspace: list project templates",
+      "type": "shell",
+      "command": "Get-ChildItem -Path 05-project-templates -Directory | Select-Object -ExpandProperty FullName",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Template: build dotnet-ai-ready-project",
+      "type": "shell",
+      "command": "dotnet build Template.sln",
+      "options": {
+        "cwd": "${workspaceFolder}/05-project-templates/dotnet-ai-ready-project"
+      },
+      "problemMatcher": "$msCompile",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Template: test dotnet-ai-ready-project",
+      "type": "shell",
+      "command": "dotnet test Template.sln",
+      "options": {
+        "cwd": "${workspaceFolder}/05-project-templates/dotnet-ai-ready-project"
+      },
+      "problemMatcher": "$msCompile",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "VS Code: install AI Workspace Lab extensions",
+      "type": "shell",
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup/install-vscode-profile-extensions.ps1 -ProfileName \"AI Workspace Lab\" -ExtensionListPath config/vscode/extensions/ai-workspace-lab.txt",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "VS Code: install Personal .NET extensions",
+      "type": "shell",
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup/install-vscode-profile-extensions.ps1 -ProfileName \"Personal .NET\" -ExtensionListPath config/vscode/extensions/personal-dotnet.txt",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "VS Code: install Lizard Soft .NET extensions",
+      "type": "shell",
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup/install-vscode-profile-extensions.ps1 -ProfileName \"Lizard Soft .NET\" -ExtensionListPath config/vscode/extensions/lizard-soft-dotnet.txt",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "VS Code: open AI Workspace Lab profile",
+      "type": "shell",
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup/open-ai-workspace.ps1 -ProfileName \"AI Workspace Lab\" -WorkspacePath ai-workspace.code-workspace",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    }
+  ]
+}

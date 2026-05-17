@@ -1,0 +1,9 @@
+# Personal .NET
+ms-dotnettools.csdevkit
+ms-dotnettools.csharp
+github.copilot-chat
+github.vscode-pull-request-github
+editorconfig.editorconfig
+redhat.vscode-yaml
+yzhang.markdown-all-in-one
+humao.rest-client
