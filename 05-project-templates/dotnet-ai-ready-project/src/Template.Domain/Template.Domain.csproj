@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Template.Domain</AssemblyName>
+    <RootNamespace>Template.Domain</RootNamespace>
+  </PropertyGroup>
+</Project>

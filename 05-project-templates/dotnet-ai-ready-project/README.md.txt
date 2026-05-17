@@ -1,4 +1,4 @@
-# Project Name
+# Назва Проекту
 
 ## Опис
 
@@ -11,11 +11,22 @@
 ## Як запустити
 
 ```bash
-dotnet restore
-dotnet build
-dotnet test
+dotnet restore Template.sln
+dotnet build Template.sln
+dotnet test Template.sln
+dotnet run --project src/Template.Api
 ```
-## AI Rules
+
+## Структура Solution
+
+- Template.sln
+- src/Template.Domain
+- src/Template.Application
+- src/Template.Infrastructure
+- src/Template.Api
+- tests/Template.Application.Tests
+
+## AI Правила
 
 У проекті використовуються:
 
@@ -27,24 +38,44 @@ AGENTS.md
 `docs/decisions/`
 `prompts/`
 
-## 4. `.cursor/rules/dotnet-architecture.mdc`
+## Швидкий Старт З Template
 
-Встав:
+1. Відкрий `TEMPLATE-SETUP.md` і виконай кроки налаштування.
+2. Заповни `docs/architecture/architecture-overview.template.md`.
+3. Підтверди або відредагуй `docs/decisions/ADR-0001-template-baseline.md`.
+4. Вибери playbook через `prompts/prompt-index.md`.
 
-```md
----
-description: .NET architecture rules for AI agents
-alwaysApply: true
----
+## Карта AI Файлів
 
-# .NET Architecture Rules
+- AGENTS.md: workflow асистента, етапи задачі, risk handling, quality gates.
+- .github/copilot-instructions.md: coding standards і технічні правила .NET.
+- .cursor/rules/: локальні правила для Cursor.
+- prompts/: готові prompt-шаблони під типові задачі.
+- docs/architecture/: архітектурний контекст проекту.
+- docs/decisions/: decision logs і tradeoffs.
+- docs/ai-task-checklist.md: короткий checklist перед завершенням AI-задачі.
 
-- Пиши чистий і читабельний C# код
-- Уникай overengineering
-- Дотримуйся існуючої архітектури проекту
-- Перед великими змінами пояснюй план
-- Не роби massive rewrite без потреби
-- Бізнес-логіка не повинна бути в контролерах
-- Domain не повинен залежати від Infrastructure
-- Пиши тести для бізнес-логіки
-- Оновлюй README при важливих змінах
+## Додані Плейбуки
+
+- prompts/architecture-review-playbook.md
+- prompts/safe-refactor-playbook.md
+- prompts/pr-hardening-playbook.md
+- prompts/prompt-index.md
+
+## Пріоритет Інструкцій
+
+Якщо інструкції конфліктують, використовуй такий пріоритет:
+
+1. Проєктні override-правила в поточній задачі
+2. AGENTS.md (workflow process)
+3. .github/copilot-instructions.md (coding standards)
+4. prompts/* (task-specific format)
+5. Загальні дефолтні правила інструмента
+
+## Критерії Готовності Для AI-Задач
+
+- Код збирається без нових помилок.
+- Релевантні тести проходять.
+- Не порушено архітектурні boundaries.
+- Документація оновлена для важливих змін.
+- Є короткий підсумок ризиків та обмежень.
